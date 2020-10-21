@@ -1,0 +1,10 @@
+<form #form="ngForm" (ngSubmit)="registrarUsuario(form)">
+    <div><label> Carne:</label><input [(ngModel)]="carne" name="carne"></div>
+    <div><label> Nombres:</label><input [(ngModel)]="nombres" name="nombres"></div>
+    <div><label> Apellidos:</label><input [(ngModel)]="apellidos" name="apellidos"></div>
+    <div><label> Correo electronico:</label><input [(ngModel)]="correo" name="correo"></div>
+    <div><label> Contraseña:</label><input [(ngModel)]="password" name="password"></div>
+     <button type="submit">
+        Registrarse
+    </button>
+</form>

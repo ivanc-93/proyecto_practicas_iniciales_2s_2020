@@ -1,0 +1,33 @@
+import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
+import {Usuario}from '../Modelos/Usuario';
+import {Injectable} from "@angular/core"
+import {Observable,of, throwError } from 'rxjs';
+import {catchError}from 'rxjs/operators'
+@Injectable()
+
+export class usuarioServicio{
+    constructor(private http:HttpClient){
+
+    }
+
+    agregarUsuario(carne:number,nombres:string,apellidos:string,password:string,correo:string){
+        var data: Usuario=new Usuario(carne,nombres,apellidos,password,correo)
+        console.log('lo que se esta mandando es: '+data.nombres)
+        return this.http.post<Usuario>('http://localhost:4000/agregarUsuario',data,{
+            headers:new HttpHeaders({
+                'Content-Type':'application/json'
+            })
+        }).pipe(catchError(err=>{
+            console.error('Error: '+err)
+            return throwError(err)
+        }))
+    }
+
+    validarCredenciales(carne:number, password: string) {
+        return this.http.post('http://localhost:4000/validarCredenciales', {
+            carne: carne,
+            password: password,
+
+        });
+    }
+}

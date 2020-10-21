@@ -1,0 +1,16 @@
+<form #form="ngForm" (ngSubmit)="iniciarSesion(form)">
+    <div><label> Carne:</label><input [(ngModel)]="carne" name="carne"></div>
+    <div><label> Contraseña:</label><input [(ngModel)]="password" name="password"></div>
+    
+     <button type="submit">
+        Ingresar
+    </button>
+</form>
+
+<form  (ngSubmit)="cambiarComponente()">
+    <button type="submit">Registrarse</button>
+</form>
+
+<form>
+    <button type="submit">Olvido su contraseña?</button>
+</form>
