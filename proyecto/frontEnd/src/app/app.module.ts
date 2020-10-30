@@ -9,14 +9,20 @@ import { FormsModule } from '@angular/forms';
 import { RegistrarseComponent } from './Registrarse/registrarse/registrarse.component';
 import { usuarioServicio } from './servicios/usuarioServicio';
 import { PantallaPrincipalComponent } from './PantallaPrincipal/pantalla-principal/pantalla-principal.component';
-
+import { RecuperarComponent } from './Login/recuperar/recuperar.component';
+import { NuevopasswordComponent } from './Login/nuevopassword/nuevopassword.component';
 
 const Rutas:Routes=[
 
   {path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'registrarse',component:RegistrarseComponent},
-  {path:'pantallaPrincipal',component:PantallaPrincipalComponent}
+  {path:'pantallaPrincipal',component:PantallaPrincipalComponent},{
+    path:'recuperarPassword', component: RecuperarComponent
+  },{
+    path:'nuevopassword', component: NuevopasswordComponent
+  }
+
 
 ]
 
@@ -25,7 +31,9 @@ const Rutas:Routes=[
     AppComponent,
     LoginComponent,
     RegistrarseComponent,
-    PantallaPrincipalComponent
+    PantallaPrincipalComponent,
+    RecuperarComponent,
+    NuevopasswordComponent
   ],
   imports: [
     BrowserModule,
