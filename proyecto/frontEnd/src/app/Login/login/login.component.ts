@@ -9,15 +9,24 @@ import {usuarioServicio}from '../../servicios/usuarioServicio'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  nombre:String;
+  apellido:String;
+  carne:Number;
+  password:String;
+  correo:String;
+  
 
   constructor(private _router:Router,private servicioUsuario:usuarioServicio) {
     
-   }
+  }
 
   ngOnInit(): void {
   }
 
-
+  cambiarARecuperarPassword() {
+    alert('puedes recuperar tu contraseña aqui: ')
+    this._router.navigate(['recuperarPassword']);
+  }
 
   cambiarComponente(){
     //alert('va a cambiar')
