@@ -30,4 +30,19 @@ export class usuarioServicio{
 
         });
     }
+
+    CambioPassword(carne:number, password: string) {
+        return this.http.post('http://localhost:4000/CambioPassword', {
+            carne: carne,
+            password: password,
+        });
+    }
+
+    validarCorreo(carne:number, correo:string) {
+        return this.http.post('http://localhost:4000/validarCorreo', {
+            carne: carne,
+            correo: correo,
+
+        });
+    }
 }
