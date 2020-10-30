@@ -1,0 +1,8 @@
+<form #form="ngForm" (ngSubmit)="Recuperar(form)">
+    <div><label> Carne:</label><input [(ngModel)]="carne" name="carne"></div>
+    <div><label> Correo:</label><input [(ngModel)]="correo" name="correo"></div>
+    
+    <button type="submit">
+        Recuperar
+    </button>
+</form>
