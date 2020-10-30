@@ -9,6 +9,11 @@ import {Router} from '@angular/router'
   styleUrls: ['./registrarse.component.css']
 })
 export class RegistrarseComponent implements OnInit {
+  nombre:String;
+  apellido:String;
+  carne:Number;
+  password:String;
+  correo:String;
 
   constructor(private servicioUsuario:usuarioServicio,private _router:Router) { }
 
