@@ -59,16 +59,33 @@ app.post('/agregarUsuario', (request, response) => {
         }
     })})
 
+    app.post('/validarCredenciales', (request, response) => {
+        var carne = request.body.carne;
+        var password = request.body.password;
+    
+        console.log("la contrasenia es: " + password + " y el user es: " + carne);
+        var miQuery = "SELECT EXISTS(" +
+            "select 1" + " FROM Usuario where carne=" + carne + " and password_=" + "\'" + password + "\') as inicio;"
+    
+        conexion.query(miQuery, function (err, result) {
+            if (err) {
+                throw err;
+            } else {
+                console.log(result[0].inicio);
+                response.send(result[0]);
+                    }
+                }
+                );
+            })
 
 
-
-app.post('/validarCredenciales', (request, response) => {
+app.post('/validarCorreo', (request, response) => {
     var carne = request.body.carne;
-    var password = request.body.password;
+    var correo = request.body.correo;
 
-    console.log("la contrasenia es: " + password + " y el user es: " + carne);
+    console.log("el user es: " + carne);
     var miQuery = "SELECT EXISTS(" +
-        "select 1" + " FROM Usuario where carne=" + carne + " and password_=" + "\'" + password + "\') as inicio;"
+        "select 1" + " FROM Usuario where carne=" + carne + " and correo=" + "\'" + correo + "\') as inicio;"
 
     conexion.query(miQuery, function (err, result) {
         if (err) {
@@ -84,7 +101,22 @@ app.post('/validarCredenciales', (request, response) => {
 })
 
 
+app.post('/CambioPassword', (request, response) => {
+    var carne = request.body.carne;
+    var password = request.body.password;
 
+    console.log("el user es: " + carne);
+    var miQuery = "update Usuario set password_=\'"+ password +"\' where carne="+ carne +";"
+
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            response.send('1');
+        }
+    }
+    );
+})
 
 
 
