@@ -48,9 +48,9 @@ input {
 
 body {
     background-attachment: fixed;
-    image-orientation: inherit;
+    image-orientation: initial;
     background-position: center;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQvSwSrKsQsk1zBq9q06XLlor4z8YCCEXLuzQ&usqp=CAU);
+    background-image: url(https://ordenadores-portatiles-baratos.es/wp-content/uploads/2020/04/las-mejores-computadoras-portatiles-4k-2020.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -63,3 +63,4 @@ h1 {
     -webkit-text-stroke: 2px black;
     
 }
+
