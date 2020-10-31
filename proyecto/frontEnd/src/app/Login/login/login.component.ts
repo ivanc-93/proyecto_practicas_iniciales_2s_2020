@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   carne:Number;
   password:String;
   correo:String;
-
+  
   constructor(private _router:Router,private servicioUsuario:usuarioServicio) {
     
   }
