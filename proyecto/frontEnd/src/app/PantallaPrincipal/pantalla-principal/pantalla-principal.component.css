@@ -1,0 +1,25 @@
+body {
+    background-attachment: fixed;
+    image-orientation: inherit;
+    background-position: center;
+    background-image: url(https://p4.wallpaperbetter.com/wallpaper/744/804/845/computer-engineering-science-tech-wallpaper-preview.jpg);
+}
+
+button {
+    background-color: deepskyblue;
+    margin-bottom: 18px;
+    font-family: Verdana, Geneva, Tahoma, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    border-color: black;
+    border-width: 4px;
+    border-style: solid;
+    -webkit-text-stroke: 1.5px black;
+    color: white;
+}
+
+p {
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: lightgreen;
+}
