@@ -7,6 +7,7 @@ import {Router} from '@angular/router'
   styleUrls: ['./pantalla-principal.component.css']
 })
 export class PantallaPrincipalComponent implements OnInit {
+  curso:String;
   
 
   constructor(private router_:Router) { }

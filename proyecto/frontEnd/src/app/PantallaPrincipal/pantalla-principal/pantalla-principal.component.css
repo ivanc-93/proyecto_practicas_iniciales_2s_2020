@@ -1,15 +1,8 @@
-body {
-    background-attachment: fixed;
-    image-orientation: inherit;
-    background-position: center;
-    background-image: url(https://p4.wallpaperbetter.com/wallpaper/744/804/845/computer-engineering-science-tech-wallpaper-preview.jpg);
-}
-
 button {
     background-color: deepskyblue;
     margin-bottom: 18px;
     font-family: Verdana, Geneva, Tahoma, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     border-color: black;
     border-width: 4px;
     border-style: solid;
@@ -17,9 +10,96 @@ button {
     color: white;
 }
 
-p {
-    font-size: large;
+h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    background-color: lightgreen;
+    background-color: cornflowerblue;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    -webkit-text-stroke: 1px black;
+    color: coral;
+}
+
+body {
+    background-attachment: fixed;
+    image-orientation: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(https://sites.google.com/site/portafoliocarlosmacallums/_/rsrc/1494399241035/unidad-i/lenguajedeprogramacion/logos_2pgm.jpg);
+}
+
+input {
+    background-color: white;
+    border-width: 4px;
+    border-style: solid;
+    -webkit-text-stroke: 2px black;
+}
+
+h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: darksalmon;
+    text-align: left;
+}
+
+h4 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+
+.mover {
+    text-align: left;
+}
+
+.mover3 {
+    left: 600px;
+    top: 82px;
+    position: absolute;
+}
+
+.mover4 {
+    left: 400px;
+    top: 82px;
+    position: absolute;
+}
+
+#boton {
+    left: 900px;
+    top: 82px;
+    position: absolute;
+}
+
+.correr {
+    left: 250px;
+    top: 140px;
+    position: absolute;
+}
+
+.correr1 {
+    left: 550px;
+    top: 140px;
+    position: absolute;
+}
+
+.correr2 {
+    left: 800px;
+    top: 140px;
+    position: absolute;
+}
+
+textarea {
+    resize: none;
+}
+
+#boton1 {
+    left: 900px;
+    top: 370px;
+    position: absolute;
+}
+
+#boton2 {
+    left: 1100px;
+    top: 370px;
+    position: absolute;
 }

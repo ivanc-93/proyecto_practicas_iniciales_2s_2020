@@ -7,12 +7,128 @@
 </head>
 <body>
     <center>
-        <h1><p>Bienvenido</p></h1>
+            <strong>
+                <h1>
+                    Pantalla Principal
+                </h1>
+            </strong>
     </center>
+
+    <input [(ngModel)]="curso" name="curso" size="40">
+
+    <div class="mover3">
+        <form>
+            <input type="radio" id="Catedratico" name="drone" value="Catedratico" checked><label for="Catedratico">Catedratico</label>
+        </form>
+    </div>
+
+    <div class="mover4">
+        <form>
+            <input type="radio" id="Curso" name="drone" value="Curso" checked><label for="Curso" class="mover">Curso</label>
+        </form>
+    </div>
+
+    <div class="mover2">
+        <form>
+            <button type="submit" id="boton"><strong>Buscar</strong></button>
+        </form>
+    </div>
+
+
+    <div>
+        <form>
+            <h3>
+                <strong>Crea tu Publicación</strong>
+            </h3>
+        </form>
+    </div>
+    <div>
+        <form>
+            <h4>
+                <strong>Tipo de Publicación</strong>
+            </h4>
+        </form>
+    </div>
+
+    <div class="correr">
+        <form>
+            <h4>
+                <input type="radio" id="Catedratico" name="drone" value="Catedratico" checked>
+                <label for="Catedratico">Catedratico</label>
+            </h4>
+        </form>
+    </div>
+
+    <div class="correr1">
+        <form>
+            <h4>
+                <input type="radio" id="Curso" name="drone" value="Curso" checked>
+                <label for="Curso">Curso</label>
+            </h4>
+        </form>
+    </div>
+
+    <div class="correr2">
+        <form>
+            <h4>
+                <input type="radio" id="CatedraticoCurso" name="drone" value="CatedraticoCurso" checked>
+                <label for="Curso">Catedratico de un Curso</label>
+            </h4>
+        </form>
+    </div>
+
+    <div>
+        <form>
+            <h4>
+                <select name="select" style="width:500px;">
+                </select>
+            </h4>
+        </form>
+    </div>
+
+    <div>
+        <form>
+            <h4>
+                <textarea style="width: 500px; height: 100px;"></textarea>
+            </h4>
+        </form>
+    </div>
+
+    <div>
+        <form>
+            <button type="submit" id="boton1">
+                <strong>Publicar</strong>
+            </button>
+        </form>
+    </div>
+
+    <div>
+        <form>
+            <button type="submit" id="boton2">
+                <strong>Cancelar</strong>
+            </button>
+        </form>
+    </div>
+
+    <div>
+        <form>
+            <h4>
+                Publicaciones
+            </h4>
+        </form>
+    </div>
+
+    <div>
+        <form>
+            <textarea style="width: 1300px; height: 300px;"></textarea>
+        </form>
+    </div>
+
+    <br><br/>
+    <br><br/>
+    
     <form (ngSubmit)="salir()">
-        <center>
-            <button type="submit">Salir</button>
-        </center>
-</form>
+        <button type="submit">Salir</button>
+    </form>
 </body>
 </html>
