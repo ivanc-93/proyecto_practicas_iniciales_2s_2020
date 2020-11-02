@@ -11,6 +11,7 @@ import { usuarioServicio } from './servicios/usuarioServicio';
 import { PantallaPrincipalComponent } from './PantallaPrincipal/pantalla-principal/pantalla-principal.component';
 import { RecuperarComponent } from './Login/recuperar/recuperar.component';
 import { NuevopasswordComponent } from './Login/nuevopassword/nuevopassword.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const Rutas:Routes=[
 
@@ -40,6 +41,7 @@ const Rutas:Routes=[
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(Rutas),
+    BrowserAnimationsModule,
     
   ],
   providers: [usuarioServicio,HttpClientModule],
