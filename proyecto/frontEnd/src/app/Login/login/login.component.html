@@ -22,33 +22,33 @@
         <div><label><strong>Contraseña:</strong></label><input [(ngModel)]="password" name="password"></div>
         <br>
         <br/>
-        <center>
+        <div>
             <button type="submit">
                 <strong>Ingresar</strong>
             </button>
-        </center>
+        </div>
     </form>
     <br>
     <br/>
     <form  (ngSubmit)="cambiarComponente()">
-        <center>
+        <div>
             <button type="submit">
                 <strong>
                     Registrarse
                 </strong>    
             </button>
-        </center>
+        </div>
     </form>
     <br>
     <br/>
     <form #form2="ngForm" (ngSubmit)="cambiarARecuperarPassword()">
-        <center>
+        <div>
             <button type="submit">
                 <strong>
                     Olvido su contraseña?
                 </strong>
             </button>
-        </center>
+        </div>
     </form>
     <br>
     <br/>

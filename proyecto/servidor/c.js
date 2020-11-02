@@ -2,6 +2,7 @@ var mysql=require('mysql')
 const express = require("express");
 const app = express();
 const bodyParser=require("body-parser");
+const { request, response } = require('express');
 app.use(bodyParser.json());
 
 app.use(function(req,res,next){
@@ -14,7 +15,7 @@ const conexion=mysql.createConnection({
     host:"localhost",
     user:"root",
     password:"12345",
-    database:"baseDeDatos"
+    database:"practicainicial"
 });
 
 function getprueba(){
@@ -43,7 +44,7 @@ app.post('/agregarUsuario', (request, response) => {
     var correo = request.body.correo;
     console.log('el nombre es:');
     console.log(nombres);
-    var miQuery = "INSERT INTO Usuario (carne, nombres, apellidos,password_,correo) VALUES(" +
+    var miQuery = "INSERT INTO Usuario (carnet, nombres, apellidos,contraseña,correo) VALUES(" +
         carne + ", \'" + nombres + "\',\'" + apellidos +
         "\',\'" + password + "\'" + ",\'" + correo + "\');";
 
@@ -65,7 +66,7 @@ app.post('/agregarUsuario', (request, response) => {
     
         console.log("la contrasenia es: " + password + " y el user es: " + carne);
         var miQuery = "SELECT EXISTS(" +
-            "select 1" + " FROM Usuario where carne=" + carne + " and password_=" + "\'" + password + "\') as inicio;"
+            "select 1" + " FROM Usuario where carnet=" + carne + " and contraseña=" + "\'" + password + "\') as inicio;"
     
         conexion.query(miQuery, function (err, result) {
             if (err) {
@@ -116,6 +117,18 @@ app.post('/CambioPassword', (request, response) => {
         }
     }
     );
+})
+
+app.get('/obtenerUsuarios',(request,response)=>{
+    var miQuery="SELECT * FROM Usuario;";
+    conexion.query(miQuery, function(err,result){
+        if(err){
+            throw err;
+        }else{
+            console.log(result);
+            response.send(result);
+        }
+    })
 })
 
 

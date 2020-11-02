@@ -6,13 +6,13 @@
     <link href="styles.css">
 </head>
 <body>
-    <center>
+    <div>
             <strong>
                 <h1>
                     Pantalla Principal
                 </h1>
             </strong>
-    </center>
+        </div>
 
     <input [(ngModel)]="curso" name="curso" size="40">
 
@@ -155,5 +155,14 @@
     <form (ngSubmit)="salir()">
         <button type="submit">Salir</button>
     </form>
+
+    <li *ngFor="let usuario of usuarios">
+        <p>Titulo: {{usuario.Nombres}}</p>
+        <!--<p>Año: {{peli["anio"]}}</p>-->
+    </li>
+
+
+
+
 </body>
 </html>

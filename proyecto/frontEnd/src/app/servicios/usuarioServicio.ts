@@ -12,7 +12,7 @@ export class usuarioServicio{
 
     agregarUsuario(carne:number,nombres:string,apellidos:string,password:string,correo:string){
         var data: Usuario=new Usuario(carne,nombres,apellidos,password,correo)
-        console.log('lo que se esta mandando es: '+data.nombres)
+        console.log('lo que se esta mandando es: '+data.Nombres)
         return this.http.post<Usuario>('http://localhost:4000/agregarUsuario',data,{
             headers:new HttpHeaders({
                 'Content-Type':'application/json'
@@ -44,5 +44,9 @@ export class usuarioServicio{
             correo: correo,
 
         });
+    }
+
+    obtenerUsuarios():Observable<Usuario[]>{
+        return this.http.get<Usuario[]>('http://localhost:4000/obtenerUsuarios');
     }
 }
