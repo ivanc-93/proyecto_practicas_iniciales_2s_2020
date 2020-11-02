@@ -38,7 +38,7 @@ ENGINE = InnoDB;
 -- Table `PracticaInicial`.`Catedratico`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `PracticaInicial`.`Catedratico` (
-  `NoCatedratico` INT NOT NULL,
+  `NoCatedratico` INT not NULL,
   `Nombres` VARCHAR(45) NULL,
   `Apellidos` VARCHAR(45) NULL,
   PRIMARY KEY (`NoCatedratico`))
@@ -50,7 +50,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `PracticaInicial`.`Curso` (
   `CodigoCurso` INT NOT NULL,
-  `Nombre` VARCHAR(45) NULL,
+  `Nombre` VARCHAR(200) NULL,
   PRIMARY KEY (`CodigoCurso`))
 ENGINE = InnoDB;
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `PracticaInicial`.`Publicacion` (
   `Fecha` DATE NULL,
   `Curso_Catedratico_idCatedraticoCurso` INT NULL,
   `Curso_CodigoCurso` INT NULL,
-  `Catedratico_NoCatedratico` INT UNSIGNED NULL,
+  `Catedratico_NoCatedratico` INT not NULL,
   `Tipo` INT UNSIGNED NULL,
   PRIMARY KEY (`idPublicacion`),
   CONSTRAINT `fk_Publicacion_Catedratico1`
@@ -260,8 +260,8 @@ START TRANSACTION;
 USE `PracticaInicial`;
 INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (283, 'Analisis y diseño de sistemas 1');
 INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (785, 'Analisis y diseño de sistemas 2');
-INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (778, 'Arquitectura de computadores y ensambladores 1');
-INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (779, 'Arquitectura de computadores y ensambladores 2');
+INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (778, 'Arquitectura de computadoras y ensambladores 1');
+INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (779, 'Arquitectura de computadoras y ensambladores 2');
 INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (774, 'Sistemas de bases de datos 1');
 INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (775, 'Sistemas de bases de datos 2');
 INSERT INTO `PracticaInicial`.`Curso` (`CodigoCurso`, `Nombre`) VALUES (014, 'Economia');
