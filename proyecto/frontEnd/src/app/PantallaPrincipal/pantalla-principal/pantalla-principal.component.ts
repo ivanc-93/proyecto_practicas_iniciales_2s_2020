@@ -3,6 +3,7 @@ import {Router} from '@angular/router'
 import { Catedratico } from 'src/app/Modelos/Catedratico';
 import {Usuario} from '../../Modelos/Usuario'
 import {usuarioServicio} from '../../servicios/usuarioServicio'
+
 @Component({
   selector: 'app-pantalla-principal',
   templateUrl: './pantalla-principal.component.html',

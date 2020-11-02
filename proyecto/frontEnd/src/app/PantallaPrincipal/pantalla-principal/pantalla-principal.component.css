@@ -48,76 +48,42 @@ h4 {
     text-align: left;
 }
 
-.mover {
-    text-align: left;
-}
-
-.mover3 {
-    left: 600px;
-    top: 82px;
-    position: absolute;
-}
-
-.mover4 {
-    left: 400px;
-    top: 82px;
-    position: absolute;
-}
-
 #boton {
-    left: 900px;
-    top: 82px;
+    left: 200px;
+    top: 130px;
     position: absolute;
-}
-
-.correr {
-    left: 250px;
-    top: 140px;
-    position: absolute;
-}
-
-.correr1 {
-    left: 550px;
-    top: 140px;
-    position: absolute;
-}
-
-.correr2 {
-    left: 800px;
-    top: 140px;
-    position: absolute;
-}
-
-textarea {
-    resize: none;
 }
 
 #boton1 {
-    left: 900px;
-    top: 370px;
+    left: 600px;
+    top: 420px;
     position: absolute;
 }
 
 #boton2 {
-    left: 1100px;
-    top: 370px;
+    left: 800px;
+    top: 420px;
     position: absolute;
 }
 
 #boton3 {
     left: 800px;
-    top: 750px;
+    top: 520px;
     position: absolute;
 }
 
 #boton4 {
     left: 1000px;
-    top: 750px;
+    top: 520px;
     position: absolute;
 }
 
 #boton5 {
     left: 1150px;
-    top: 750px;
+    top: 520px;
     position: absolute;
+}
+
+textarea {
+    resize: none;
 }
