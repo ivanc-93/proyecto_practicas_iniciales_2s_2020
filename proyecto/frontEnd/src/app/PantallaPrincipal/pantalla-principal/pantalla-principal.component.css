@@ -103,3 +103,21 @@ textarea {
     top: 370px;
     position: absolute;
 }
+
+#boton3 {
+    left: 800px;
+    top: 750px;
+    position: absolute;
+}
+
+#boton4 {
+    left: 1000px;
+    top: 750px;
+    position: absolute;
+}
+
+#boton5 {
+    left: 1150px;
+    top: 750px;
+    position: absolute;
+}
