@@ -18,13 +18,13 @@
 
     <div class="mover3">
         <form>
-            <input type="radio" id="Catedratico" name="drone" value="Catedratico" checked><label for="Catedratico">Catedratico</label>
+            <input type="radio" id="Catedratico" name="practica" value="Catedratico"><label for="Catedratico">Catedratico</label>
         </form>
     </div>
 
     <div class="mover4">
         <form>
-            <input type="radio" id="Curso" name="drone" value="Curso" checked><label for="Curso" class="mover">Curso</label>
+            <input type="radio" id="Curso" name="pracitca" value="Curso"><label for="Curso" class="mover">Curso</label>
         </form>
     </div>
 
@@ -53,7 +53,7 @@
     <div class="correr">
         <form>
             <h4>
-                <input type="radio" id="Catedratico" name="drone" value="Catedratico" checked>
+                <input type="radio" id="Catedratico" name="practica" value="Catedratico">
                 <label for="Catedratico">Catedratico</label>
             </h4>
         </form>
@@ -62,7 +62,7 @@
     <div class="correr1">
         <form>
             <h4>
-                <input type="radio" id="Curso" name="drone" value="Curso" checked>
+                <input type="radio" id="Curso" name="practica" value="Curso">
                 <label for="Curso">Curso</label>
             </h4>
         </form>
@@ -71,7 +71,7 @@
     <div class="correr2">
         <form>
             <h4>
-                <input type="radio" id="CatedraticoCurso" name="drone" value="CatedraticoCurso" checked>
+                <input type="radio" id="CatedraticoCurso" name="practica" value="CatedraticoCurso">
                 <label for="Curso">Catedratico de un Curso</label>
             </h4>
         </form>
@@ -81,6 +81,9 @@
         <form>
             <h4>
                 <select name="select" style="width:500px;">
+                        <option *ngFor="let catedratico of catedraticos">
+                            {{catedratico.Nombres}}
+                        </option>
                 </select>
             </h4>
         </form>

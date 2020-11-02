@@ -3,6 +3,7 @@ import {Usuario}from '../Modelos/Usuario';
 import {Injectable} from "@angular/core"
 import {Observable,of, throwError } from 'rxjs';
 import {catchError}from 'rxjs/operators'
+import { Catedratico } from '../Modelos/Catedratico';
 @Injectable()
 
 export class usuarioServicio{
@@ -48,5 +49,9 @@ export class usuarioServicio{
 
     obtenerUsuarios():Observable<Usuario[]>{
         return this.http.get<Usuario[]>('http://localhost:4000/obtenerUsuarios');
+    }
+
+    obtenerCatedratico():Observable<Catedratico[]>{
+        return this.http.get<Catedratico[]>('http://localhost:4000/obtenerCatedratico');
     }
 }

@@ -131,7 +131,17 @@ app.get('/obtenerUsuarios',(request,response)=>{
     })
 })
 
-
+app.get('/obtenerCatedratico',(request,response)=>{
+    var miQuery="SELECT * FROM Catedratico;";
+    conexion.query(miQuery, function(err,result){
+        if(err){
+            throw err;
+        }else{
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
 
 app.listen(4000, () => {
     
