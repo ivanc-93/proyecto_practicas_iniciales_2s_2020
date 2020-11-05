@@ -16,6 +16,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AcordionComponent } from './acordion/acordion.component';
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { PublicacionComponent } from './PantallaPrincipal/publicacion/publicacion.component';
+import { PublicacionesComponent } from './PantallaPrincipal/publicaciones/publicaciones.component';
 
 const Rutas:Routes=[
 
@@ -25,6 +26,7 @@ const Rutas:Routes=[
   {path:'pantallaPrincipal',component:PantallaPrincipalComponent},{
     path:'recuperarPassword', component: RecuperarComponent
   },
+  {path:'publicaciones',component:PublicacionesComponent},
   {path:'publicacion',component:PublicacionComponent},
   {path:'nuevopassword', component: NuevopasswordComponent},
   {path:'acordion',component:AcordionComponent}
@@ -43,7 +45,8 @@ const Rutas:Routes=[
     NuevopasswordComponent,
     AcordionComponent,
     FiltroPipe,
-    PublicacionComponent
+    PublicacionComponent,
+    PublicacionesComponent
   ],
   imports: [
     BrowserModule,

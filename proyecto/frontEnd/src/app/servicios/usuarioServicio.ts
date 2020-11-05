@@ -4,6 +4,7 @@ import {Injectable} from "@angular/core"
 import {Observable,of, throwError } from 'rxjs';
 import {catchError}from 'rxjs/operators'
 import { Catedratico } from '../Modelos/Catedratico';
+import { Publicacion } from '../Modelos/Publicacion';
 @Injectable()
 
 export class usuarioServicio{
@@ -59,4 +60,25 @@ export class usuarioServicio{
         
         return this.http.get<Usuario[]>('http://localhost:4000/obtenerUsuario/'+carne);
     }
+
+    guardarPublicacion(msj:string,carne:number,numCat:number){
+        var id=Math.floor(Math.random() * 1000)
+        var data: Publicacion=new Publicacion(id,msj,carne,numCat);
+        alert('el carne es: '+carne+'el codigo del cat es: '+data.Catedratico_NoCatedratico)
+        //console.log('lo que se esta mandando es: '+data.Nombres)
+        return this.http.post<Publicacion>('http://localhost:4000/guardarPublicacion',data,{
+            headers:new HttpHeaders({
+                'Content-Type':'application/json'
+            })
+        }).pipe(catchError(err=>{
+            console.error('Error: '+err)
+            return throwError(err)
+        }))
+    }
+
+    obtenerPublicaciones():Observable<Publicacion[]>{
+        return this.http.get<Publicacion[]>('http://localhost:4000/obtenerPublicaciones');
+    }
+
+
 }
