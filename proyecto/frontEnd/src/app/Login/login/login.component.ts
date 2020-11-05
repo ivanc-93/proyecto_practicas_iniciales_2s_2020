@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   correo:String;
   
   constructor(private _router:Router,private servicioUsuario:usuarioServicio) {
+    this.obtenerLocalStorage()
     
   }
 
@@ -32,6 +33,37 @@ export class LoginComponent implements OnInit {
     this._router.navigate(['registrarse']);
   }
 
+  guardarCarne(){
+    var carne2=this.carne.toString();
+    localStorage.setItem("carne",carne2)
+  }
+
+  guardarCarneLocalStorage(){
+    let nombre:string='fernando'
+    let persona={
+      nombre:"juan",
+      edad:18,
+      coords:{lat:10,lng:-10}
+
+
+    }
+
+    localStorage.setItem("nombre",nombre);
+    localStorage.setItem("persona",JSON.stringify(persona));
+
+  }
+
+  obtenerLocalStorage(){
+    let nombre=localStorage.getItem("nombre")
+    let persona=JSON.parse(localStorage.getItem("persona"))
+
+    console.log(nombre)
+    console.log(persona.nombre)
+
+  }
+
+
+
   iniciarSesion(form:NgForm){
    
     var carne: number=form.value.carne
@@ -44,6 +76,7 @@ export class LoginComponent implements OnInit {
         if (respuesta == "1") {
           console.log("hora 7:35 ");
           alert('Bienvenido')
+          this.guardarCarne();
           this._router.navigate(['pantallaPrincipal']);
 
           //console.log("ha ingresado correctamente");

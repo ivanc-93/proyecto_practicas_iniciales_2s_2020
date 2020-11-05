@@ -54,4 +54,9 @@ export class usuarioServicio{
     obtenerCatedratico():Observable<Catedratico[]>{
         return this.http.get<Catedratico[]>('http://localhost:4000/obtenerCatedratico');
     }
+
+    obtenerUsuario(carne:number):Observable<Usuario[]>{
+        
+        return this.http.get<Usuario[]>('http://localhost:4000/obtenerUsuario/'+carne);
+    }
 }

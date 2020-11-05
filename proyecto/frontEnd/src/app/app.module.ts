@@ -12,6 +12,10 @@ import { PantallaPrincipalComponent } from './PantallaPrincipal/pantalla-princip
 import { RecuperarComponent } from './Login/recuperar/recuperar.component';
 import { NuevopasswordComponent } from './Login/nuevopassword/nuevopassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AcordionComponent } from './acordion/acordion.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { PublicacionComponent } from './PantallaPrincipal/publicacion/publicacion.component';
 
 const Rutas:Routes=[
 
@@ -20,9 +24,11 @@ const Rutas:Routes=[
   {path:'registrarse',component:RegistrarseComponent},
   {path:'pantallaPrincipal',component:PantallaPrincipalComponent},{
     path:'recuperarPassword', component: RecuperarComponent
-  },{
-    path:'nuevopassword', component: NuevopasswordComponent
-  }
+  },
+  {path:'publicacion',component:PublicacionComponent},
+  {path:'nuevopassword', component: NuevopasswordComponent},
+  {path:'acordion',component:AcordionComponent}
+
 
 
 ]
@@ -34,11 +40,15 @@ const Rutas:Routes=[
     RegistrarseComponent,
     PantallaPrincipalComponent,
     RecuperarComponent,
-    NuevopasswordComponent
+    NuevopasswordComponent,
+    AcordionComponent,
+    FiltroPipe,
+    PublicacionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    NgbModule,
     HttpClientModule,
     RouterModule.forRoot(Rutas),
     BrowserAnimationsModule,

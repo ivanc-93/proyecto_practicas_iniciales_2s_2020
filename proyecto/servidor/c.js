@@ -131,6 +131,21 @@ app.get('/obtenerUsuarios',(request,response)=>{
     })
 })
 
+app.get('/obtenerUsuario/:carne',(request,response)=>{
+    console.log("si llega al backend")
+    var carne=request.params.carne;
+    console.log(carne)
+    var miQuery="SELECT * FROM usuario where carnet="+carne+";";
+    conexion.query(miQuery, function(err,result){
+        if(err){
+            throw err;
+        }else{
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
+
 app.get('/obtenerCatedratico',(request,response)=>{
     var miQuery="SELECT * FROM Catedratico;";
     conexion.query(miQuery, function(err,result){

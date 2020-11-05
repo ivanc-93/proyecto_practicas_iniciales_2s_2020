@@ -11,10 +11,11 @@
                 <h1>
                     Pantalla Principal
                 </h1>
+                <label>Carne:{{carne}}</label>
             </strong>
         </div>
 
-    <input [(ngModel)]="curso" name="curso" size="40">
+        <!--<input [(ngModel)]="curso" name="curso" size="40">
 
     <div>
         <form>
@@ -29,7 +30,7 @@
         <form>
             <button type="submit" id="boton"><strong>Buscar</strong></button>
         </form>
-    </div>
+    </div>-->
 
 
     <div>
@@ -56,6 +57,51 @@
             </h4>
         </form>
     </div>
+
+    <!--comienza ejemplo de filtro-->
+
+    <div class="container">
+        
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <input type="text" class="form-control" name="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Accion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let catedratico of catedraticos | filtro:filterPost">
+                  <td>{{catedratico.Nombres}}</td>
+                  <td>{{catedratico.Apellidos}}</td>
+                  <td><button (click)="publicar(catedratico.NoCatedratico,catedratico.Nombres,catedratico.Apellidos)">Publicar</button></td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    <!--termina el ejemplo-->
+
+   <!---- <table>
+        <th>Nombre</th>
+        <th>Accion</th>
+        <tr *ngFor="let catedratico of catedraticos">
+            <td>{{catedratico.Nombres}}</td>
+        </tr>
+        
+    </table>
 
     <div>
         <form>
@@ -133,10 +179,10 @@
 
     <form (ngSubmit)="salir()">
         <button type="submit">Salir</button>
-    </form>
+    </form>-->
 
     <!--li *ngFor="let usuario of usuarios">
-        <p>Titulo: {{usuario.Nombres}}</p>
+        <p>Titulo: {{usuario.Nombres}}</p>-->
         <!--<p>Año: {{peli["anio"]}}</p>-->
 
 </body>
