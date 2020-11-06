@@ -1,0 +1,10 @@
+<div *ngFor="let usuario of usuarios"><label>Usuario: {{usuario.Nombres}}</label></div>
+<div><label>Catedratico:{{Nombres}} {{Apellidos}} </label></div>
+
+
+<div>
+    <textarea id="cuerpo" [(ngModel)]="cuerpo" name="cuerpo">{{cuerpo}}</textarea>
+
+</div>
+<button (click)="guardarPublicacion(cuerpo)">Publicar</button>
+<div><a href="pantallaPrincipal">Pantalla Principal</a></div>

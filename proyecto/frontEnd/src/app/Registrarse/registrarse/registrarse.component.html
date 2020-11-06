@@ -1,10 +1,40 @@
-<form #form="ngForm" (ngSubmit)="registrarUsuario(form)">
-    <div><label> Carne:</label><input [(ngModel)]="carne" name="carne"></div>
-    <div><label> Nombres:</label><input [(ngModel)]="nombres" name="nombres"></div>
-    <div><label> Apellidos:</label><input [(ngModel)]="apellidos" name="apellidos"></div>
-    <div><label> Correo electronico:</label><input [(ngModel)]="correo" name="correo"></div>
-    <div><label> Contraseña:</label><input [(ngModel)]="password" name="password"></div>
-     <button type="submit">
-        Registrarse
-    </button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p>Registro</p>
+    <form #form="ngForm" (ngSubmit)="registrarUsuario(form)">
+        <div><label> Carne:</label><input [(ngModel)]="carne" name="carne"></div>
+        <br>
+        <br/>
+        <div><label> Nombres:</label><input [(ngModel)]="nombre" name="nombre"></div>
+        <br>
+        <br/>
+        <div><label> Apellidos:</label><input [(ngModel)]="apellido" name="apellido"></div>
+        <br>
+        <br/>
+        <div><label> Correo electronico:</label><input [(ngModel)]="correo" name="correo"></div>
+        <br>
+        <br/>
+        <div><label> Contraseña:</label><input [(ngModel)]="password" name="password"></div>
+        <br>
+        <br/>
+        <div>
+        <button type="submit">
+            Registrarse
+        </button>
+    </div>
+    </form>
+    <br>
+    <br/>
+    <br>
+    <br/>
+    <br>
+    <br/> 
+
+</body>
+
+</html>

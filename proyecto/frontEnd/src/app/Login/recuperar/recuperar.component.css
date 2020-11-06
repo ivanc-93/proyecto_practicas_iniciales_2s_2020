@@ -4,7 +4,7 @@ button {
     font-family: Verdana, Geneva, Tahoma, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 18px;
     border-color: black;
-    border-width: 4px;
+    border-width: 3px;
     border-style: solid;
     -webkit-text-stroke: 1.5px black;
     color: white;
@@ -28,11 +28,11 @@ p {
 div {
     text-align-last: center;
     border-color: black;
-    border-width: 4px;
+    border-width: 5px;
     border-style: solid;
     -webkit-text-stroke: 2px black;
     color: white;
-    background-color: chocolate;
+    background-color: lightblue;
 }
 
 input {
@@ -46,11 +46,12 @@ body {
     background-attachment: fixed;
     image-orientation: inherit;
     background-position: center;
-    background-image: url(https://s1.1zoom.me/b4147/86/Keyboard_Toys_Macro_Closeup_Laptops_Police_520947_1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-image: url(https://s1.1zoom.me/b5050/544/Keyboard_Synthwave_562760_1920x1080.jpg);
 }
 
 h1 {
-    color: greenyellow;
+    background-color: teal;
     border-color: black;
     border-width: 4px;
     border-style: solid;

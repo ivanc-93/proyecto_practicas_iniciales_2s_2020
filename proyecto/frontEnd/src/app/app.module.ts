@@ -9,14 +9,29 @@ import { FormsModule } from '@angular/forms';
 import { RegistrarseComponent } from './Registrarse/registrarse/registrarse.component';
 import { usuarioServicio } from './servicios/usuarioServicio';
 import { PantallaPrincipalComponent } from './PantallaPrincipal/pantalla-principal/pantalla-principal.component';
-
+import { RecuperarComponent } from './Login/recuperar/recuperar.component';
+import { NuevopasswordComponent } from './Login/nuevopassword/nuevopassword.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AcordionComponent } from './acordion/acordion.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { PublicacionComponent } from './PantallaPrincipal/publicacion/publicacion.component';
+import { PublicacionesComponent } from './PantallaPrincipal/publicaciones/publicaciones.component';
 
 const Rutas:Routes=[
 
   {path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'registrarse',component:RegistrarseComponent},
-  {path:'pantallaPrincipal',component:PantallaPrincipalComponent}
+  {path:'pantallaPrincipal',component:PantallaPrincipalComponent},{
+    path:'recuperarPassword', component: RecuperarComponent
+  },
+  {path:'publicaciones',component:PublicacionesComponent},
+  {path:'publicacion',component:PublicacionComponent},
+  {path:'nuevopassword', component: NuevopasswordComponent},
+  {path:'acordion',component:AcordionComponent}
+
+
 
 ]
 
@@ -25,13 +40,21 @@ const Rutas:Routes=[
     AppComponent,
     LoginComponent,
     RegistrarseComponent,
-    PantallaPrincipalComponent
+    PantallaPrincipalComponent,
+    RecuperarComponent,
+    NuevopasswordComponent,
+    AcordionComponent,
+    FiltroPipe,
+    PublicacionComponent,
+    PublicacionesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    NgbModule,
     HttpClientModule,
     RouterModule.forRoot(Rutas),
+    BrowserAnimationsModule,
     
   ],
   providers: [usuarioServicio,HttpClientModule],

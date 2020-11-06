@@ -1,16 +1,61 @@
-<form #form="ngForm" (ngSubmit)="iniciarSesion(form)">
-    <div><label> Carne:</label><input [(ngModel)]="carne" name="carne"></div>
-    <div><label> Contraseña:</label><input [(ngModel)]="password" name="password"></div>
-    
-     <button type="submit">
-        Ingresar
-    </button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css">
+</head>
+<body>
+    <p>
+        <strong>
+            <h1>
+                Inicio de Sesión
+            </h1>
+        </strong>
+    </p>
+    <br>
+    <br/>
+    <form #form="ngForm" (ngSubmit)="iniciarSesion(form)">
+        <div><label><strong>Carne:</strong></label><input [(ngModel)]="carne" name="carne"></div>
+        <br>
+        <br/>
+        <div><label><strong>Contraseña:</strong></label><input [(ngModel)]="password" name="password"></div>
+        <br>
+        <br/>
+        <div>
+            <button type="submit">
+                <strong>Ingresar</strong>
+            </button>
+        </div>
+    </form>
+    <br>
+    <br/>
+    <form  (ngSubmit)="cambiarComponente()">
+        <div>
+            <button type="submit">
+                <strong>
+                    Registrarse
+                </strong>    
+            </button>
+        </div>
+    </form>
+    <br>
+    <br/>
+    <form #form2="ngForm" (ngSubmit)="cambiarARecuperarPassword()">
+        <div>
+            <button type="submit">
+                <strong>
+                    Olvido su contraseña?
+                </strong>
+            </button>
+        </div>
+    </form>
+    <br>
+    <br/>
+    <br>
+    <br/>
+    <br>
+    <br/> 
+</body>
+</html>
 
-<form  (ngSubmit)="cambiarComponente()">
-    <button type="submit">Registrarse</button>
-</form>
-
-<form>
-    <button type="submit">Olvido su contraseña?</button>
-</form>

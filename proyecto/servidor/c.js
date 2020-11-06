@@ -1,34 +1,37 @@
-var mysql=require('mysql')
+var mysql = require('mysql')
 const express = require("express");
 const app = express();
-const bodyParser=require("body-parser");
+const bodyParser = require("body-parser");
+const { request, response } = require('express');
 app.use(bodyParser.json());
 
-app.use(function(req,res,next){
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
-const conexion=mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"12345",
-    database:"baseDeDatos"
+const conexion = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "12345",
+    database: "practicainicial"
 });
 
-function getprueba(){
-    var miQuery="SELECT * FROM PRUEBA;"
-    conexion.query(miQuery,function(err,result){
-        if(err){throw err;}else{console.log(result);
-        return result;}
+function getprueba() {
+    var miQuery = "SELECT * FROM PRUEBA;"
+    conexion.query(miQuery, function (err, result) {
+        if (err) { throw err; } else {
+            console.log(result);
+            return result;
+        }
     });
 }
 
-app.get('/prueba',(request, response)=>{
-    var miQuery ='Select *from prueba;';
-    conexion.query(miQuery,function(err,result){
-        if(err){throw err;}else{
+app.get('/prueba', (request, response) => {
+    var miQuery = 'Select *from prueba;';
+    conexion.query(miQuery, function (err, result) {
+        if (err) { throw err; } else {
             //console.log(result);
             response.send(result);
         }
@@ -43,7 +46,7 @@ app.post('/agregarUsuario', (request, response) => {
     var correo = request.body.correo;
     console.log('el nombre es:');
     console.log(nombres);
-    var miQuery = "INSERT INTO Usuario (carne, nombres, apellidos,password_,correo) VALUES(" +
+    var miQuery = "INSERT INTO Usuario (carnet, nombres, apellidos,contraseña,correo) VALUES(" +
         carne + ", \'" + nombres + "\',\'" + apellidos +
         "\',\'" + password + "\'" + ",\'" + correo + "\');";
 
@@ -57,10 +60,33 @@ app.post('/agregarUsuario', (request, response) => {
             //console.log('se agrego el registro correctamente hora:11:57')
 
         }
-    })})
+    })
+})
 
+app.post('/guardarPublicacion', (request, response) => {
+    var idPublicacion = request.body.idPublicacion;
+    var mensaje = request.body.Mensaje;
+    var usuarioCarne = request.body.Usuario_Carnet;
+    var numCat = request.body.Catedratico_NoCatedratico;
 
+    console.log('el nombre es:');
 
+    var miQuery = "INSERT INTO publicacion (idPublicacion, Mensaje, Usuario_carnet,Catedratico_NoCatedratico) VALUES(" +
+        idPublicacion + ", \'" + mensaje + "\'," + usuarioCarne +
+        "," + numCat + ");";
+
+    console.log(miQuery);
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+            //console.log('se agrego el registro correctamente hora:11:57')
+
+        }
+    })
+})
 
 app.post('/validarCredenciales', (request, response) => {
     var carne = request.body.carne;
@@ -68,7 +94,27 @@ app.post('/validarCredenciales', (request, response) => {
 
     console.log("la contrasenia es: " + password + " y el user es: " + carne);
     var miQuery = "SELECT EXISTS(" +
-        "select 1" + " FROM Usuario where carne=" + carne + " and password_=" + "\'" + password + "\') as inicio;"
+        "select 1" + " FROM Usuario where carnet=" + carne + " and contraseña=" + "\'" + password + "\') as inicio;"
+
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result[0].inicio);
+            response.send(result[0]);
+        }
+    }
+    );
+})
+
+
+app.post('/validarCorreo', (request, response) => {
+    var carne = request.body.carne;
+    var correo = request.body.correo;
+
+    console.log("el user es: " + carne);
+    var miQuery = "SELECT EXISTS(" +
+        "select 1" + " FROM Usuario where carne=" + carne + " and correo=" + "\'" + correo + "\') as inicio;"
 
     conexion.query(miQuery, function (err, result) {
         if (err) {
@@ -84,12 +130,77 @@ app.post('/validarCredenciales', (request, response) => {
 })
 
 
+app.post('/CambioPassword', (request, response) => {
+    var carne = request.body.carne;
+    var password = request.body.password;
+
+    console.log("el user es: " + carne);
+    var miQuery = "update Usuario set password_=\'" + password + "\' where carne=" + carne + ";"
+
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            response.send('1');
+        }
+    }
+    );
+})
+
+app.get('/obtenerUsuarios', (request, response) => {
+    var miQuery = "SELECT * FROM Usuario;";
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
+
+app.get('/obtenerPublicaciones', (request, response) => {
+    var miQuery = "SELECT * FROM publicacion;";
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
 
 
+app.get('/obtenerUsuario/:carne', (request, response) => {
+    console.log("si llega al backend")
+    var carne = request.params.carne;
+    console.log(carne)
+    var miQuery = "SELECT * FROM usuario where carnet=" + carne + ";";
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
 
+app.get('/obtenerCatedratico', (request, response) => {
+    var miQuery = "SELECT * FROM Catedratico;";
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
 
 app.listen(4000, () => {
-    
+
     console.log("backend inicializado, en el puerto 4000");
 })
 
