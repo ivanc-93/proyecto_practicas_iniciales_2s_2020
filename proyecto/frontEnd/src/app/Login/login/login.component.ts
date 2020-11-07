@@ -13,7 +13,9 @@ export class LoginComponent implements OnInit {
   apellido:String;
   carne:Number;
   password:String;
-  correo:String;
+  correo: String;
+
+
   
   constructor(private _router:Router,private servicioUsuario:usuarioServicio) {
     this.obtenerLocalStorage()

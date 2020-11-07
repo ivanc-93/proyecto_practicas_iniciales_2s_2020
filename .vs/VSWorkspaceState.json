@@ -3,8 +3,12 @@
     "",
     "\\proyecto",
     "\\proyecto\\frontEnd",
+    "\\proyecto\\frontEnd\\src",
+    "\\proyecto\\frontEnd\\src\\app",
+    "\\proyecto\\frontEnd\\src\\app\\Login",
+    "\\proyecto\\frontEnd\\src\\app\\Login\\login",
     "\\proyecto\\servidor"
   ],
-  "SelectedNode": "\\proyecto\\frontEnd\\.browserslistrc",
+  "SelectedNode": "\\proyecto\\frontEnd\\src\\app\\Login\\login\\login.component.ts",
   "PreviewInSolutionExplorer": false
 }
