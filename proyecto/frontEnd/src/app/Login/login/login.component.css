@@ -24,7 +24,7 @@ button {
   box-shadow: 37px 22px 29px 10px rgba(0,0,0,0.75);
   color: white;
   background-color: #59696D;
-  opacity: 97%;
+  opacity: 96%;
 }
 #imagen {
 
@@ -33,8 +33,8 @@ button {
   -o-background-size: cover;
   background-size: cover;
   position:relative;
-  left:20%;
-  width:60%;
+  left:25%;
+  width:50%;
   height:200px;
 
 }
@@ -88,7 +88,7 @@ p {
 
 .TextBox {
   color: white;
-  background-color: grey;
+  background-color: #59696D;
   width: 100%;
 }
 
