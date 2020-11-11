@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   
   constructor(private _router:Router,private servicioUsuario:usuarioServicio) {
-    this.obtenerLocalStorage()
+    
     
   }
 
