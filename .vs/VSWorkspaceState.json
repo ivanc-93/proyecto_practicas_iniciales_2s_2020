@@ -5,10 +5,10 @@
     "\\proyecto\\frontEnd",
     "\\proyecto\\frontEnd\\src",
     "\\proyecto\\frontEnd\\src\\app",
-    "\\proyecto\\frontEnd\\src\\app\\Login",
-    "\\proyecto\\frontEnd\\src\\app\\Login\\login",
-    "\\proyecto\\servidor"
+    "\\proyecto\\frontEnd\\src\\app\\Modelos",
+    "\\proyecto\\frontEnd\\src\\app\\PantallaPrincipal",
+    "\\proyecto\\frontEnd\\src\\app\\PantallaPrincipal\\publicacion",
+    "\\proyecto\\frontEnd\\src\\app\\PantallaPrincipal\\publicaciones"
   ],
-  "SelectedNode": "\\proyecto\\frontEnd\\src\\app\\Login\\login\\login.component.ts",
   "PreviewInSolutionExplorer": false
 }

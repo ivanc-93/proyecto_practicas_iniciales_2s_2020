@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link href="registrarse.component.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <p>Registro</p>
     <form #form="ngForm" (ngSubmit)="registrarUsuario(form)">
-        <div><label> Carne:</label><input [(ngModel)]="carne" name="carne"></div>
-        <br>
-        <br/>
-        <div><label> Nombres:</label><input [(ngModel)]="nombre" name="nombre"></div>
-        <br>
-        <br/>
-        <div><label> Apellidos:</label><input [(ngModel)]="apellido" name="apellido"></div>
-        <br>
-        <br/>
-        <div><label> Correo electronico:</label><input [(ngModel)]="correo" name="correo"></div>
-        <br>
-        <br/>
-        <div><label> Contraseña:</label><input [(ngModel)]="password" name="password"></div>
-        <br>
-        <br/>
-        <div>
-        <button type="submit">
+      <div id="contain">
+       
+        <br />
+        <div class="component"><label> Carne:</label><br /><input [(ngModel)]="carne" name="carne" class="TextBox"></div>
+        <br />
+        <div class="component"><label> Nombres:</label><br /><input [(ngModel)]="nombre" name="nombre" class="TextBox"></div>
+        <br />
+        <div class="component"><label> Apellidos:</label><br /><input [(ngModel)]="apellido" name="apellido" class="TextBox"></div>
+        <br />
+        <div class="component"><label> Correo electronico:</label><br /><input [(ngModel)]="correo" name="correo" class="TextBox"></div>
+        <br />
+        <div class="component"><label> Contraseña:</label><br /><input [(ngModel)]="password" type="password" name="password" class="TextBox"></div>
+        <br />
+        <div class="component">
+
+          <button type="submit">
             Registrarse
-        </button>
-    </div>
+          </button>
+        </div>
+        <br />
+      </div>
     </form>
     <br>
     <br/>
