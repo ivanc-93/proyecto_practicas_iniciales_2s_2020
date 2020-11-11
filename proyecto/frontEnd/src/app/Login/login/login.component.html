@@ -17,7 +17,7 @@
   <form #form="ngForm" (ngSubmit)="iniciarSesion(form)">
     <div class="component"><label><strong>Carne:</strong></label> <br /><input [(ngModel)]="carne" name="carne" class="TextBox"></div>
     <br />
-    <div class="component"><label><strong>Contraseña:</strong></label> <br /><input [(ngModel)]="password" name="password" class="TextBox"></div>
+    <div class="component"><label><strong>Contraseña:</strong></label> <br /><input [(ngModel)]="password" type="password" name="password" class="TextBox"></div>
     <br />
     <div class="component1">
       <button type="submit">

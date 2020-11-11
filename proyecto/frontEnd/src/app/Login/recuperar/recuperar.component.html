@@ -19,42 +19,23 @@
     <br>
     <br>
     <br/>
-    <form #form="ngForm" (ngSubmit)="Recuperar(form)">
-        <div><label><strong>Carne:</strong></label><input [(ngModel)]="carne" name="carne"></div>
-        <br>
-        <br/>
-        <br>
-        <br/>
-        <br>
-        <div><label><strong>Correo:</strong></label><input [(ngModel)]="correo" name="correo"></div>
-        <br>
-        <br/>
-        
-        <br>
-        <br/>
-        <br>
-        <br/>
-        <br>
+    <div id="contain">
+      <form #form="ngForm" (ngSubmit)="Recuperar(form)">
+        <div class="component"><label><strong>Carne:</strong></label><br /><input [(ngModel)]="carne" name="carne" class="TextBox"></div>
+        <br />
+        <div class="component"><label><strong>Correo:</strong></label><br /><input [(ngModel)]="correo" name="correo" class="TextBox"></div>
+        <br />
         <div>
-            <button type="submit">
-                <strong>
-                    Recuperar
-                </strong>
-            </button>
+          <button type="submit">
+            <strong>
+              Recuperar
+            </strong>
+          </button>
         </div>
-    </form>
-    <br>
-    <br/>
-    <br>
-    <br/>
-    <br>
-    <br/>
-    <br>
-    <br/>
-    <br>
-    <br/>
-    <br>
-    <br/>
-    <br>
+      </form>
+      <br />
+      
+    </div>
+   
 </body>
 </html>
