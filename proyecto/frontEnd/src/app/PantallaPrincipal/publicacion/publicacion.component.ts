@@ -50,7 +50,7 @@ export class PublicacionComponent implements OnInit {
   guardarPublicacion(cuer:string){
     this.cuerpo=cuer;
 
-    alert('antes de llamar al servicio el carnet es: '+this.carne)
+    //alert('antes de llamar al servicio el carnet es: '+this.carne)
     this.servicio.guardarPublicacion(this.cuerpo,this.carne,this.codCat).subscribe(
       res => {
         var respuesta: string = res["inicio"];

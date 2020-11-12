@@ -25,7 +25,7 @@ export class PantallaPrincipalComponent implements OnInit {
   }
 
   publicar(NoCatedratico:number,Nombres:string,Apellidos:string){
-    alert('los datos son:'+Nombres+Apellidos+NoCatedratico.toString());
+    //alert('los datos son:'+Nombres+Apellidos+NoCatedratico.toString());
     let info={
       nombres:Nombres,
       apellidos:Apellidos,

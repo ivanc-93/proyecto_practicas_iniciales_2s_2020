@@ -18,12 +18,8 @@ export class LoginComponent implements OnInit {
 
   
   constructor(private _router:Router,private servicioUsuario:usuarioServicio) {
-<<<<<<< HEAD
-    //this.obtenerLocalStorage()
-=======
     
     
->>>>>>> 4e0b436e9aaccf544985c5832ee08bdae5556419
   }
 
   ngOnInit(): void {

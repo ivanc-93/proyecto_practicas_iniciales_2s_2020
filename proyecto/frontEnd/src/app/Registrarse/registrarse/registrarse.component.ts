@@ -9,8 +9,8 @@ import {Router} from '@angular/router'
   styleUrls: ['./registrarse.component.css']
 })
 export class RegistrarseComponent implements OnInit {
-  nombre:String;
-  apellido:String;
+  nombres:String;
+  apellidos:String;
   carne:Number;
   password:String;
   correo:String;
@@ -26,6 +26,8 @@ export class RegistrarseComponent implements OnInit {
     var apellidos: string=form.value.apellidos
     var correo: string=form.value.correo
     var password: string=form.value.password
+
+    alert("la informacion que se esta mandando es: "+carne+nombres+apellidos+correo+password)
     
 
     this.servicioUsuario.agregarUsuario(carne,nombres,apellidos,password,correo).subscribe((result)=>

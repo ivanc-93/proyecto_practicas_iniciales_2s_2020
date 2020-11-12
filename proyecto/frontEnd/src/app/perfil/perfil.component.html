@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <div>
+    <div *ngFor="let usuario of usuarios">
         
         
                 
@@ -15,9 +15,9 @@
                     Perfil de usuario
                 </p>
                 <a href="/pantallaPrincipal">Pantalla Principal</a>
-                <div><label>Nombre: </label></div>
-                <div><label>Apellido: </label></div>
-                <div><label>Correo: </label></div>
+                <div><label>Nombre:{{usuario.Nombres}} </label></div>
+                <div><label>Apellido:{{usuario.Apellidos}} </label></div>
+                <div><label>Correo:{{usuario.Correo}} </label></div>
                 
                 
             

@@ -39,7 +39,7 @@ app.get('/prueba', (request, response) => {
 })
 
 app.post('/agregarUsuario', (request, response) => {
-    var nombres = request.body.nombres;
+    var nombres = request.body.Nombres;
     var carne = request.body.carne;
     var apellidos = request.body.apellidos;
     var password = request.body.password;
@@ -87,6 +87,31 @@ app.post('/guardarPublicacion', (request, response) => {
         }
     })
 })
+
+app.post('/guardarComentario', (request, response) => {
+    var idComentario = request.body.idComentario;
+    var mensaje = request.body.Mensaje;
+    var usuarioCarne = request.body.Usuario_Carnet;
+    var numPubli = request.body.Publicacion_idPublicacion;
+
+    console.log('el nombre es:');
+
+    var miQuery = "INSERT INTO comentario (idComentario,Mensaje, Publicacion_idPublicacion,Usuario_Carnet) VALUES("+
+        idComentario+",\""+mensaje+"\","+numPubli+","+usuarioCarne+");"
+
+    console.log(miQuery);
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+            //console.log('se agrego el registro correctamente hora:11:57')
+
+        }
+    })
+})
+
 
 app.post('/validarCredenciales', (request, response) => {
     var carne = request.body.carne;
@@ -159,6 +184,23 @@ app.get('/obtenerUsuarios', (request, response) => {
     })
 })
 
+
+
+app.get('/obtenerComentarios/:idPublicacion', (request, response) => {
+    var idPublicacion = request.params.idPublicacion;
+    var miQuery = "SELECT * FROM comentario where Publicacion_idPublicacion="+idPublicacion+";";
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
+
+
+
 app.get('/obtenerPublicaciones', (request, response) => {
     var miQuery = "SELECT * FROM publicacion;";
     conexion.query(miQuery, function (err, result) {
@@ -177,6 +219,21 @@ app.get('/obtenerUsuario/:carne', (request, response) => {
     var carne = request.params.carne;
     console.log(carne)
     var miQuery = "SELECT * FROM usuario where carnet=" + carne + ";";
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
+
+app.get('/obtenerUnSoloCatedratico/:noCat', (request, response) => {
+    console.log("si llega al backend")
+    var noCat = request.params.noCat;
+    //console.log(carne)
+    var miQuery = "SELECT * FROM catedratico where NoCatedratico=" + noCat + ";";
     conexion.query(miQuery, function (err, result) {
         if (err) {
             throw err;
