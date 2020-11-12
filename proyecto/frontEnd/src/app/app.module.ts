@@ -17,6 +17,7 @@ import { AcordionComponent } from './acordion/acordion.component';
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { PublicacionComponent } from './PantallaPrincipal/publicacion/publicacion.component';
 import { PublicacionesComponent } from './PantallaPrincipal/publicaciones/publicaciones.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const Rutas:Routes=[
 
@@ -29,8 +30,8 @@ const Rutas:Routes=[
   {path:'publicaciones',component:PublicacionesComponent},
   {path:'publicacion',component:PublicacionComponent},
   {path:'nuevopassword', component: NuevopasswordComponent},
-  {path:'acordion',component:AcordionComponent}
-
+  {path:'acordion',component:AcordionComponent},
+  {path:'perfil',component:PerfilComponent}
 
 
 ]
@@ -46,7 +47,8 @@ const Rutas:Routes=[
     AcordionComponent,
     FiltroPipe,
     PublicacionComponent,
-    PublicacionesComponent
+    PublicacionesComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

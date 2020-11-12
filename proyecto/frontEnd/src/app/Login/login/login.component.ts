@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
 
   guardarCarne(){
     var carne2=this.carne.toString();
+    
     localStorage.setItem("carne",carne2)
   }
 
