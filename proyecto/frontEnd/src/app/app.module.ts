@@ -19,6 +19,8 @@ import { PublicacionComponent } from './PantallaPrincipal/publicacion/publicacio
 import { PublicacionesComponent } from './PantallaPrincipal/publicaciones/publicaciones.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PublicacionConComentariosComponent } from './publicacion-con-comentarios/publicacion-con-comentarios.component';
+import { BuscarCursoComponent } from './buscar-curso/buscar-curso.component';
+import { FiltroCursoPipe } from './pipes/filtro-curso.pipe';
 
 const Rutas:Routes=[
 
@@ -33,7 +35,8 @@ const Rutas:Routes=[
   {path:'nuevopassword', component: NuevopasswordComponent},
   {path:'acordion',component:AcordionComponent},
   {path:'perfil',component:PerfilComponent},
-  {path:'publicacionConComentarios',component:PublicacionConComentariosComponent}
+  {path:'publicacionConComentarios',component:PublicacionConComentariosComponent},
+  {path:'buscarCurso',component:BuscarCursoComponent}
 
 
 ]
@@ -51,7 +54,9 @@ const Rutas:Routes=[
     PublicacionComponent,
     PublicacionesComponent,
     PerfilComponent,
-    PublicacionConComentariosComponent
+    PublicacionConComentariosComponent,
+    BuscarCursoComponent,
+    FiltroCursoPipe
   ],
   imports: [
     BrowserModule,

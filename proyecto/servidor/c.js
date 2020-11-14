@@ -139,7 +139,7 @@ app.post('/validarCorreo', (request, response) => {
 
     console.log("el user es: " + carne);
     var miQuery = "SELECT EXISTS(" +
-        "select 1" + " FROM Usuario where carne=" + carne + " and correo=" + "\'" + correo + "\') as inicio;"
+        "select 1" + " FROM Usuario where carnet=" + carne + " and correo=" + "\'" + correo + "\') as inicio;"
 
     conexion.query(miQuery, function (err, result) {
         if (err) {
@@ -156,11 +156,12 @@ app.post('/validarCorreo', (request, response) => {
 
 
 app.post('/CambioPassword', (request, response) => {
+
     var carne = request.body.carne;
     var password = request.body.password;
 
-    console.log("el user es: " + carne);
-    var miQuery = "update Usuario set password_=\'" + password + "\' where carne=" + carne + ";"
+    console.log("el user es: " + carne+"si!");
+    var miQuery = "update Usuario set Contraseña=\'" + password + "\' where carnet=" + carne + ";"
 
     conexion.query(miQuery, function (err, result) {
         if (err) {
@@ -174,6 +175,18 @@ app.post('/CambioPassword', (request, response) => {
 
 app.get('/obtenerUsuarios', (request, response) => {
     var miQuery = "SELECT * FROM Usuario;";
+    conexion.query(miQuery, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log(result);
+            response.send(result);
+        }
+    })
+})
+
+app.get('/obtenerCursos', (request, response) => {
+    var miQuery = "SELECT * FROM curso;";
     conexion.query(miQuery, function (err, result) {
         if (err) {
             throw err;

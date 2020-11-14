@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import {Usuario}from '../Modelos/Usuario';
+import {Curso}from '../Modelos/Curso';
 import {Injectable} from "@angular/core"
 import {Observable,of, throwError } from 'rxjs';
 import {catchError}from 'rxjs/operators'
@@ -51,6 +52,10 @@ export class usuarioServicio{
 
     obtenerUsuarios():Observable<Usuario[]>{
         return this.http.get<Usuario[]>('http://localhost:4000/obtenerUsuarios');
+    }
+
+    obtenerCursos():Observable<Curso[]>{
+        return this.http.get<Curso[]>('http://localhost:4000/obtenerCursos');
     }
 
     obtenerCatedratico():Observable<Catedratico[]>{

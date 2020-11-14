@@ -42,6 +42,10 @@ export class PantallaPrincipalComponent implements OnInit {
 
   }
 
+  buscarCursos(){
+    this.router_.navigate(['buscarCurso'])
+  }
+
   obtenerLocalStorage(){
     let carne=localStorage.getItem("carne")
     //let persona=JSON.parse(localStorage.getItem("persona"))
